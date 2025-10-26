@@ -32,7 +32,7 @@
 <div align="center">
 
 ### Home Page
-![Home Page Preview](WhatsApp Image 2025-10-26 at 4.51.57 PM.jpeg)
+![Home Page Preview](WhatsApp%20Image%202025-10-26%20at%204.51.57%20PM.jpeg)
 
 ### Download Options
 Choose between **Video** 🎥 or **Audio** 🎵 format
