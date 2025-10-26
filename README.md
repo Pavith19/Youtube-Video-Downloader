@@ -32,7 +32,7 @@
 <div align="center">
 
 ### Home Page
-![Home Page Preview](https://via.placeholder.com/800x400/667eea/ffffff?text=Paste+your+YouTube+URL+here)
+![Home Page Preview](WhatsApp Image 2025-10-26 at 4.51.57 PM.jpeg)
 
 ### Download Options
 Choose between **Video** 🎥 or **Audio** 🎵 format
