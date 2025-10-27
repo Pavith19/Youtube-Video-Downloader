@@ -1,0 +1,179 @@
+<!-- templates/success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .success-container {
+            max-width: 700px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .success-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            animation: scaleIn 0.5s ease;
+        }
+
+        .success-icon svg {
+            color: white;
+        }
+
+        .success-title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .success-message {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .video-info {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .video-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .thumbnail-container {
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .download-type-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .badge-video {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .badge-audio {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            margin-top: 20px;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-card">
+            <div class="success-icon">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            
+            <h1 class="success-title">Download Successful!</h1>
+            <p class="success-message">Your file has been downloaded successfully</p>
+            
+            <div class="video-info">
+                <div class="video-title">{{ title }}</div>
+                
+                {% if download_type == 'audio' %}
+                    <span class="download-type-badge badge-audio">
+                        🎵 Audio Download
+                    </span>
+                {% else %}
+                    <span class="download-type-badge badge-video">
+                        🎥 Video Download
+                    </span>
+                {% endif %}
+                
+                <div class="thumbnail-container">
+                    <img src="{{ thumbnail }}" alt="Video Thumbnail">
+                </div>
+            </div>
+            
+            <a href="/" class="back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Download Another
+            </a>
+        </div>
+
+        <footer style="margin-top: 40px;">
+            <p>Developed by <strong>Pavith Bambaravanage</strong></p>
+            <p class="copyright">© 2025 All Rights Reserved</p>
+        </footer>
+    </div>
+</body>
+</html>

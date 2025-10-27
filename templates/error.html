@@ -1,0 +1,113 @@
+<!-- templates/error.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .error-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .error-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            animation: scaleIn 0.5s ease;
+        }
+
+        .error-icon svg {
+            color: white;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .error-message {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .error-details {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            word-wrap: break-word;
+            color: #e74c3c;
+            font-size: 0.9rem;
+            border-left: 4px solid #e74c3c;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-card">
+            <div class="error-icon">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+            </div>
+            
+            <h1 class="error-title">Oops! Something went wrong</h1>
+            <p class="error-message">We couldn't complete your download. This might be due to an invalid URL, network issues, or the video being restricted.</p>
+            
+            <div class="error-details">
+                <strong>Error Details:</strong><br>
+                {{ error }}
+            </div>
+            
+            <a href="/" class="back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Try Again
+            </a>
+        </div>
+
+        <footer style="margin-top: 40px;">
+            <p>Developed by <strong>Pavith Bambaravanage</strong></p>
+            <p class="copyright">© 2025 All Rights Reserved</p>
+        </footer>
+    </div>
+</body>
+</html>
